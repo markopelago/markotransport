@@ -1,7 +1,7 @@
 <?php
 include 'function/db.php';
 session_start();
-if($_SESSION['transporter_email']==FALSE){
+if($_SESSION['isloggedin']==FALSE){
 	  header('Location:login/index.php');
 
 }
