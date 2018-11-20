@@ -117,8 +117,8 @@ function delete_row(rowno)
 								<div class="profile_img">	
 									<span class="prfil-img"><img src="images/a.png" alt=""> </span> 
 									<div class="user-name">
-										<p><?php echo $_SESSION['nama_transporter']; ?></p>
-										<span><?php echo $_SESSION['transporter_email'] ?></span>
+										<p><?php echo $_SESSION['name']; ?></p>
+										<span><?php echo $_SESSION['email'] ?></span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>
@@ -156,7 +156,7 @@ include 'editrute.php';
 include 'history.php';
 }else{
 		?>				
-<?php echo "SELAMAT DATANG DI DASHBOARD, ".$_SESSION['nama_transporter'];  ?>
+<?php echo "SELAMAT DATANG DI DASHBOARD, ".$_SESSION['name'];  ?>
 		<?php } ?>
 	
 					</div>

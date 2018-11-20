@@ -13,13 +13,13 @@
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="control-label">Jenis Armada</label>
-												<input type="text" class="form-control select2" name="jenis_armada" list="truk">
-												<datalist  id="truk" >
+												<input type="text" class="form-control select2" name="jenis_armada" list="truck">
+												<datalist  id="truck" >
                   <?php 
-                  $query=mysqli_query($db,"SELECT * FROM jenis_truck");
+                  $query=mysqli_query($db,"SELECT * FROM vehicle_types");
                   while ( $grp=mysqli_fetch_array($query)) {
                    ?>
-                  <option value="<?php echo $grp[Nama]; ?>" ><?php echo $grp[Nama]; ?></option>
+                  <option value="<?php echo $grp[name]; ?>" ><?php echo $grp[name]; ?></option>
                 <?php } ?>
                 </select>
 											</div>
@@ -27,15 +27,27 @@
 												<label for="foto" class="control-label">Foto Armada</label>
 												<input type="file" class="form-control" name="file">
 											</div>
-											
 											<div class="form-group">
-												<label for="max-load" class="control-label">Max Load</label>
-												<input type="text" class="form-control" name="max_load">
+												<label for="max-load" class="control-label">Dimension Load Lenght</label>
+												<input type="text" class="form-control" name="lenght_load">
 											</div>
-<div class="form-group">
+											<div class="form-group">
+												<label for="max-load" class="control-label">Dimension Load Weight</label>
+												<input type="text" class="form-control" name="weight_load">
+											</div>
+											<div class="form-group">
+												<label for="max-load" class="control-label">Dimension Load Height</label>
+												<input type="text" class="form-control" name="height_load">
+											</div>
+											<div class="form-group">
 												<label for="qty" class="control-label">Qty Truck</label>
 												<input type="text" class="form-control" name="qty_truck">
 											</div>
+											<div class="form-group">
+												<label for="qty" class="control-label">Nopol</label>
+												<input type="text" class="form-control" name="nopol">
+											</div>
+
 											<div class="form-group">
                   <label for="typeload" class="control-label">Type Load</label>
 

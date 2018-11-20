@@ -4,7 +4,7 @@ date_default_timezone_set('Asia/Jakarta');
 $server = 'localhost' ;
 $username = 'root' ;
 $password = '' ;
-$database = 'transport';
+$database = 'markopelago';
 $db=mysqli_connect("$server","$username","$password","$database");
 $date=date("Y-m-d H:i:s");
 $mysqli = new mysqli("$server","$username","$password","$database");
