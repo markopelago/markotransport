@@ -84,7 +84,7 @@ function delete_row(rowno)
 							<a href="index.php?page=rute"><i class="fa fa-home nav_icon"></i>Data Rute</a>
 						</li>
 						<li>
-							<a href="index.php?page=history"><i class="fa fa-home nav_icon"></i>History layanan <?php $idtrp=$_SESSION['id_transporter']; $cnt=mysqli_num_rows(mysqli_query($db,"SELECT * FROM data_pemesanan where transporter_id=$idtrp AND status NOT IN ('Delivered','Rejected')")); ?> <span class="badge"><?php echo $cnt; ?></span></a>
+							<a href="index.php?page=history"><i class="fa fa-home nav_icon"></i>History layanan <?php $idtrp=$_SESSION['id']; $cnt=mysqli_num_rows(mysqli_query($db,"SELECT * FROM transaction_forwarder where forwarder_id=$idtrp")); ?> <span class="badge"><?php echo $cnt; ?></span></a>
 						</li>
 					</ul></nav>	
 		</div>
@@ -117,8 +117,8 @@ function delete_row(rowno)
 								<div class="profile_img">	
 									<span class="prfil-img"><img src="images/a.png" alt=""> </span> 
 									<div class="user-name">
-										<p><?php echo $_SESSION['nama_transporter']; ?></p>
-										<span><?php echo $_SESSION['transporter_email'] ?></span>
+										<p><?php echo $_SESSION['name']; ?></p>
+										<span><?php echo $_SESSION['email'] ?></span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>
@@ -156,7 +156,7 @@ include 'editrute.php';
 include 'history.php';
 }else{
 		?>				
-<?php echo "SELAMAT DATANG DI DASHBOARD, ".$_SESSION['nama_transporter'];  ?>
+<?php echo "SELAMAT DATANG DI DASHBOARD, ".$_SESSION['name'];  ?>
 		<?php } ?>
 	
 					</div>
