@@ -1,7 +1,7 @@
 <?php
 include 'function/db.php';
 session_start();
-if($_SESSION['isloggedin']==FALSE){
+if($_SESSION['id']==FALSE){
 	  header('Location:login/index.php');
 
 }
