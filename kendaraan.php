@@ -27,7 +27,7 @@ include 'modaladd.php';
 							?>
 								<tr>
 									<th scope="row"><?php echo $no++ ?></th>
-									<td><?php $vt=mysqli_fetch_array(mysqli_query($db,"SELECT * FROM vehicle_types where id=$dtp[vehicle_type_id]")); echo $vt[name]; ?></td>
+									<td><?php $vt=mysqli_fetch_array(mysqli_query($db,"SELECT * FROM vehicle_types where id=$dtp['vehicle_type_id']")); echo $vt['name']; ?></td>
 									<td><?php echo $dtp['name']; ?></td>
 									<td><?php echo $dtp['max_load']; ?></td>
 										<td> <?php echo $dtp['load_type']; ?>  </td>
