@@ -4,7 +4,7 @@ include 'db.php';
 if ($act=='login') {
 $email=$_POST['form-email'];
 $unenrcrypted=$_POST['form-password'];
-$password=md5($unenrcrypted);
+$password=base64_encode($unenrcrypted);
 $ceklogin=mysqli_fetch_array(mysqli_query($db,"SELECT * from transporter where email='$email' AND password='$password'"));
 if ($ceklogin['id']==TRUE) {
 $_SESSION['transporter_email']=$ceklogin['email'];
