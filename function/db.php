@@ -1,10 +1,10 @@
 <?php
 session_start();
 date_default_timezone_set('Asia/Jakarta');
-$server = 'localhost' ;
-$username = 'root' ;
+$server = '192.168.1.123' ;
+$username = 'user' ;
 $password = '' ;
-$database = 'transport';
+$database = 'markopelago';
 $db=mysqli_connect("$server","$username","$password","$database");
 $date=date("Y-m-d H:i:s");
 $mysqli = new mysqli("$server","$username","$password","$database");
