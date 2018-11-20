@@ -18,9 +18,9 @@ echo "<script type='text/javascript'>alert('Data Login Anda Salah'); window.loca
    </script>";
 }
 }elseif($act='logout'){
-unset($_SESSION['transporter_email']);
-unset($_SESSION['nama_transporter']);
-unset($_SESSION['id_transporter']);
+unset($_SESSION['email']);
+unset($_SESSION['name']);
+unset($_SESSION['id']);
 session_destroy();
 header('Location:../login/index.php');
 exit();
