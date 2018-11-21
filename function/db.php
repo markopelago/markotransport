@@ -1,8 +1,8 @@
 <?php
 session_start();
 date_default_timezone_set('Asia/Jakarta');
-$server = '192.168.1.123' ;
-$username = 'user' ;
+$server = 'localhost' ;
+$username = 'root' ;
 $password = '' ;
 $database = 'markopelago';
 $db=mysqli_connect("$server","$username","$password","$database");

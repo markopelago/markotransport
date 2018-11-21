@@ -9,17 +9,17 @@
 										<form method="post" enctype="multipart/form-data" action="function/armada.php?service=addarmada">
 											<div class="form-group">
 												<label for="nama-armada" class="control-label">Nama Armada</label>
-												<input type="text" class="form-control" name="nama">
+												<input type="text" class="form-control" name="name">
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="control-label">Jenis Armada</label>
-												<input type="text" class="form-control select2" name="jenis_armada" list="truk">
+												<input type="text" class="form-control select2" name="vehicle_types" list="truk">
 												<datalist  id="truk" >
                   <?php 
-                  $query=mysqli_query($db,"SELECT * FROM jenis_truck");
+                  $query=mysqli_query($db,"SELECT * FROM vehicle_types");
                   while ( $grp=mysqli_fetch_array($query)) {
                    ?>
-                  <option value="<?php echo $grp[Nama]; ?>" ><?php echo $grp[Nama]; ?></option>
+                  <option value="<?php echo $grp[name]; ?>" ><?php echo $grp[name]; ?></option>
                 <?php } ?>
                 </select>
 											</div>
@@ -32,10 +32,7 @@
 												<label for="max-load" class="control-label">Max Load</label>
 												<input type="text" class="form-control" name="max_load">
 											</div>
-<div class="form-group">
-												<label for="qty" class="control-label">Qty Truck</label>
-												<input type="text" class="form-control" name="qty_truck">
-											</div>
+											
 											<div class="form-group">
                   <label for="typeload" class="control-label">Type Load</label>
 

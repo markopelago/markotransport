@@ -2,11 +2,10 @@
 $service=$_GET['service'];
 include 'db.php';
 $nama=$_POST['nama'];
-$jenis_armada=$_POST['jenis_armada'];
+$jenis_armada=$_POST['vehicle_types'];
 $max_load=$_POST['max_load'];
-$qty_truck=$_POST['qty_truck'];
 $typeload=$_POST['typeload'];
-$identity=$_SESSION['id_transporter'];
+$identity=$_SESSION['id'];
 $ekstensi_diperbolehkan	= array('png','jpg');
 			$namafile = $_FILES['file']['name'];
 			$x = explode('.', $namafile);
@@ -32,7 +31,7 @@ if($service=='addarmada'){
 			}else{
 				echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
 			}	
-$mysql="INSERT INTO data_armada (transporterID,nama,jenis_armada,foto,max_load,qty_truck,load_type,available) VALUES ('$identity','$nama','$jenis_armada','$namafile','$max_load','$qty_truck','$typeload','$qty_truck')";
+$mysql="INSERT INTO forwarder_vehicles (user_id,name,vehicle_types,photo,max_load,load_type) VALUES ('$identity','$nama','$jenis_armada','$namafile','$max_load','$typeload')";
 $insert=mysqli_query($db,$mysql);
 header('Location:../index.php?page=kendaraan');
 }elseif($service=='editarmada'){
