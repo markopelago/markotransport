@@ -2,7 +2,7 @@
 $service=$_GET['service'];
 include 'db.php';
 $nama=$_POST['name'];
-$jenis_armada=$_POST['vehicle_type_id'];
+$jenis_armada=$_POST['jenis_armada'];
 $max_load=$_POST['max_load'];
 $typeload=$_POST['typeload'];
 $brands=$_POST['brands'];
@@ -37,7 +37,7 @@ if($service=='addarmada'){
 			}else{
 				echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
 			}	
-$mysql="INSERT INTO forwarder_vehicles (user_id,name,vehicle_type_id,vehicle_brand_id,dimension_load_l,dimension_load_w,dimension_load_h,photo,max_load,nopol,load_type,description) VALUES ('$identity','$nama','$jenis_armada','$namafile','$max_load','$typeload','$nopol','$brands','$weight','$height','$weight','$desc')";
+$mysql="INSERT INTO forwarder_vehicles (user_id,name,vehicle_type_id,vehicle_brand_id,dimension_load_l,dimension_load_w,dimension_load_h,max_load,nopol,load_type,photo,description) VALUES ('$identity','$nama','$jenis_armada','$brands','$lenght','$weight','$height','$max_load','$nopol','$typeload','$namafile','$desc')";
 $insert=mysqli_query($db,$mysql);
 header('Location:../index.php?page=kendaraan');
 }elseif($service=='editarmada'){

@@ -98,7 +98,7 @@ function delete_row(rowno)
 				<!--logo -->
 				<div class="logo">
 					<a href="index.html">
-						<h1>NOVUS</h1>
+						<h1>Marko Transport</h1>
 						<span>AdminPanel</span>
 					</a>
 				</div>

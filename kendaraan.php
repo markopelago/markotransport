@@ -30,7 +30,7 @@ include 'modaladd.php';
 									<td><?php $vid=$dtp[vehicle_type_id]; $vt=mysqli_fetch_array(mysqli_query($db,"SELECT * FROM vehicle_types where id=$vid")); echo $vt[name]; ?></td>
 									<td><?php echo $dtp['name']; ?></td>
 									<td><?php echo $dtp['max_load']; ?></td>
-										<td> <?php echo $dtp['load_type']; ?>  </td>
+									<td><?php echo $dtp['load_type']; ?></td>
 										<td><a href="index.php?page=tambahrute&id=<?php echo $dtp['id'];?>">Tambah Rute</a> | <a href="delete.php?id=<?php echo $dtp['id'];?>">Delete</a> </td> 
 																</tr>
 								<?php } ?>

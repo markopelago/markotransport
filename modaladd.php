@@ -13,7 +13,7 @@
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="control-label">Jenis Armada</label>
-												<input type="text" class="form-control select2" name="vehicle_type_id" list="truk">
+												<input type="text" class="form-control select2" name="jenis_armada" list="truk">
 												<datalist  id="truk" >
                   <?php 
                   $query=mysqli_query($db,"SELECT * FROM vehicle_types");
@@ -28,16 +28,16 @@
 												<input type="file" class="form-control" name="file">
 											</div>
 											<div class="form-group">
-												<label for="max-load" class="control-label">Berat Beban Dimensi</label>
+												<label for="dimension-weight" class="control-label">Berat Beban Dimensi</label>
 												<input type="text" class="form-control" name="dimension_weight">
 											</div>
 											<div class="form-group">
-												<label for="max-load" class="control-label">Panjang Beban Dimensi</label>
+												<label for="dimension-lenght" class="control-label">Panjang Beban Dimensi</label>
 												<input type="text" class="form-control" name="dimension_lenght">
 											</div>
 
 											<div class="form-group">
-												<label for="max-load" class="control-label">Tinggi Beban Dimensi</label>
+												<label for="dimension-height" class="control-label">Tinggi Beban Dimensi</label>
 												<input type="text" class="form-control" name="dimension_height">
 											</div>
 											<div class="form-group">
@@ -45,7 +45,7 @@
 												<input type="text" class="form-control" name="max_load">
 											</div>
 											<div class="form-group">
-												<label for="max-load" class="control-label">Nopol</label>
+												<label for="nopol" class="control-label">Nopol</label>
 												<input type="text" class="form-control" name="nopol">
 											</div>
 											<div class="form-group">
@@ -61,7 +61,7 @@
                 </select>
 											</div>
 											<div class="form-group">
-												<label for="max-load" class="control-label">Deskripsi</label>
+												<label for="desc" class="control-label">Deskripsi</label>
 												<input type="text" class="form-control" name="desc">
 											</div>
 
