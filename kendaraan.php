@@ -11,6 +11,7 @@
 									<th>Nama Armada</th>
 									<th>Max Loady</th>
 									<th>Load Type</th>
+									<th>Nopol</th>
 									<th>Action</th>
 								</tr>
 							</thead>
@@ -31,7 +32,8 @@ include 'modaladd.php';
 									<td><?php echo $dtp['name']; ?></td>
 									<td><?php echo $dtp['max_load']; ?></td>
 									<td><?php echo $dtp['load_type']; ?></td>
-										<td><a href="index.php?page=tambahrute&id=<?php echo $dtp['id'];?>">Tambah Rute</a> | <a href="delete.php?id=<?php echo $dtp['id'];?>">Delete</a> </td> 
+									<td><?php echo $dtp['nopol']; ?></td>
+										<td><a href="index.php?page=tambahrute&id=<?php echo $dtp['id'];?>"><button style="margin-bottom: 5px;" class="btn btn-success" >Tambah Rute</a></button> | <a href="delete.php?id=<?php echo $dtp['id'];?>"><button class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span>Delete</a> </td> 
 																</tr>
 								<?php } ?>
 							</tbody>
@@ -39,4 +41,15 @@ include 'modaladd.php';
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-				
+				<script type='text/javascript'>
+// confirm record deletion
+function delete_user( id ){
+     
+    var answer = confirm('Are you sure?');
+    if (answer){
+        // if user clicked ok, 
+        // pass the id to delete.php and execute the delete query
+        window.location = 'delete.php?id=' + id;
+    } 
+}
+</script>

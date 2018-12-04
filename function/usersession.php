@@ -11,7 +11,7 @@ if ($ceklogin['id']==TRUE) {
 $_SESSION['email']=$ceklogin['email'];
 $_SESSION['name']=$ceklogin['name'];
 $_SESSION['id']=$ceklogin['id'];
-$updatelogin=mysqli_query($db,"UPDATE transporter set last_sign_in_at=$date AND last_sign_in_ip=$clientip where email=$email");
+$updatelogin=mysqli_query($db,"UPDATE a_users set last_sign_in_at=$date AND last_sign_in_ip=$clientip where email=$email");
 	  header('Location:../index.php');
 } else {
 echo "<script type='text/javascript'>alert('Data Login Anda Salah'); window.location.href='../login/index.php';

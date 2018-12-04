@@ -13,13 +13,13 @@
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="control-label">Jenis Armada</label>
-												<input type="text" class="form-control select2" name="jenis_armada" list="truk">
-												<datalist  id="truk" >
+												<input type="text" class="form-control select2" name="vehicle_type" list="vehicle">
+												<datalist  id="vehicle" >
                   <?php 
                   $query=mysqli_query($db,"SELECT * FROM vehicle_types");
                   while ( $grp=mysqli_fetch_array($query)) {
                    ?>
-                  <option value="<?php echo $grp[name]; ?>" ><?php echo $grp[name]; ?></option>
+                  <option value="<?php echo $grp[id]; ?>" ><?php echo $grp[name]; ?></option>
                 <?php } ?>
                 </select>
 											</div>
