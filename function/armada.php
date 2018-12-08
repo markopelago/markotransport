@@ -1,11 +1,12 @@
 <?php
 $service=$_GET['service'];
+$id=$_GET['id'];
 include 'db.php';
 $nama=$_POST['name'];
 $type=$_POST['vehicle_type'];
 $max_load=$_POST['max_load'];
 $typeload=$_POST['typeload'];
-$brands=$_POST['brands'];
+$brands=$_POST['brand'];
 $weight=$_POST['dimension_weight'];
 $lenght=$_POST['dimension_lenght'];
 $height=$_POST['dimension_height'];
@@ -42,6 +43,10 @@ $insert=mysqli_query($db,$mysql);
 header('Location:../index.php?page=kendaraan');
 }elseif($service=='editarmada'){
 
+}elseif($service=='hapusarmada'){
+$query = "DELETE FROM forwarder_vehicles WHERE id = $id";
+$result = mysqli_query($db,$query);
+header('Location:../index.php?page=kendaraan');
 }
 
 ?>

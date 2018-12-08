@@ -33,7 +33,7 @@ include 'modaladd.php';
 									<td><?php echo $dtp['max_load']; ?></td>
 									<td><?php echo $dtp['load_type']; ?></td>
 									<td><?php echo $dtp['nopol']; ?></td>
-										<td><a href="index.php?page=tambahrute&id=<?php echo $dtp['id'];?>"><button style="margin-bottom: 5px;" class="btn btn-success" >Tambah Rute</a></button> | <a href="delete.php?id=<?php echo $dtp['id'];?>"><button class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span>Delete</a> </td> 
+										<td><a href="index.php?page=tambahrute&id=<?php echo $dtp['id'];?>"><button style="margin-bottom: 5px;" class="btn btn-success" >Tambah Rute</a></button> | <a href="function/armada.php?service=hapusarmada&id=<?php echo $dtp['id'];?>"><button class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span>Delete</a> </td> 
 																</tr>
 								<?php } ?>
 							</tbody>

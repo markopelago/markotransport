@@ -13,13 +13,12 @@
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="control-label">Jenis Armada</label>
-												<input type="text" class="form-control select2" name="vehicle_type" list="vehicle">
-												<datalist  id="vehicle" >
-                  <?php 
-                  $query=mysqli_query($db,"SELECT * FROM vehicle_types");
+												<select  class="form-control select2" name="vehicle_type" >
+												<?php 
+                  $query=mysqli_query($db,"SELECT * FROM vehicle_types order by id DESC");
                   while ( $grp=mysqli_fetch_array($query)) {
                    ?>
-                  <option value="<?php echo $grp[id]; ?>" ><?php echo $grp[name]; ?></option>
+                  <option value="<?php echo $grp[id]; ?>"><?php echo $grp[name]; ?></option>
                 <?php } ?>
                 </select>
 											</div>
@@ -50,15 +49,15 @@
 											</div>
 											<div class="form-group">
 												<label for="message-text" class="control-label">Merek Armada</label>
-												<input type="text" class="form-control select2" name="brand" list="merek">
-												<datalist  id="merek" >
+												<input type="text" class="form-control" id="answerInput" list="merek">
+												<datalist style="display: none" id="merek" >
                   <?php 
                   $query=mysqli_query($db,"SELECT * FROM vehicle_brands");
-                  while ( $grp=mysqli_fetch_array($query)) {
+                  while ( $grps=mysqli_fetch_array($query)) {
                    ?>
-                  <option value="<?php echo $grp[name]; ?>" ><?php echo $grp[name]; ?></option>
+                  <option data-value="<?php echo $grps[id]; ?>" ><?php echo $grps[name]; ?></option>
                 <?php } ?>
-                </select>
+                </datalist><input type="hidden" name="brand" id="answerInput-hidden">
 											</div>
 											<div class="form-group">
 												<label for="desc" class="control-label">Deskripsi</label>
@@ -92,3 +91,23 @@
 								</div>
 							</div>
 						</div>
+						<script type="text/javascript">
+							document.querySelector('input[list]').addEventListener('input', function(e) {
+    var input = e.target,
+        list = input.getAttribute('list'),
+        options = document.querySelectorAll('#' + list + ' option'),
+        hiddenInput = document.getElementById(input.id + '-hidden'),
+        inputValue = input.value;
+
+    hiddenInput.value = inputValue;
+
+    for(var i = 0; i < options.length; i++) {
+        var option = options[i];
+
+        if(option.innerText === inputValue) {
+            hiddenInput.value = option.getAttribute('data-value');
+            break;
+        }
+    }
+});
+						</script>
